@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Api/v1/get")
+@RequestMapping("/Dashboard/")
 public class DashboardController {
     @Autowired
    IDashboardservice iDashboardservice;
 
-    @GetMapping
+    @GetMapping("/get")
     public ResponseEntity<List<dashboard>> readDashboardData(){
        return  new ResponseEntity<List<dashboard>>(iDashboardservice.getAllData(), HttpStatus.OK);
     }
